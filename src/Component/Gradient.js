@@ -35,7 +35,7 @@ export default function Gradient(){
 
     return(
         <> 
-        <div className="d-flex flex-row">
+        <div className="d-flex justify-content-center">
             <div className="col-sm-6">
                 <div className="card">
                     <div className="card-body">
@@ -59,19 +59,20 @@ export default function Gradient(){
                         <input type="number" id="breakpoint" min="0" max="100" onChange={Breakp2}/>
                     </div>                    
                 </div>
+                <div className="card">
+                    <div className="card-body">
+                        <label forHtml="angle">Angle</label>
+                        <input type="range" id="angle" name="angle" min="0" max="180"  onChange={Angle}/>
+                    </div>
+                </div>                
 
             </div>
         </div>
-        <div className="card">
-                <div className="card-body">
-                    <label forHtml="angle">Angle</label>
-                    <input type="range" id="angle" name="angle" min="0" max="180"  onChange={Angle}/>
-                </div>
+
+        <div className="d-flex justify-content-center m-2">
+            <div className="rounded" style={{ backgroundImage: `linear-gradient(`+angle+`deg,`+ color1 +` `+ breakp1+`% ,`+ color2+` `+ breakp2+ `% )`, height: "100px", width: "500px"}}></div>            
             </div>
-
-        <div  style={{ backgroundImage: `linear-gradient(`+angle+`deg,`+ color1 +` `+ breakp1+`% ,`+ color2+` `+ breakp2+ `% )`, height: "100px", width: "500px" }}></div>            
-
-        
+        <div className="text-center">Le CSS : linear-gradient({angle}deg, {color1} {breakp1}% ,{color2} {breakp2}% )</div>
         </>
     );
 
